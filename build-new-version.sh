@@ -298,9 +298,9 @@ EOF
 EOF
 
     if is_nightly; then
-        echo >> "$CARGO_BIN_RECIPE" "DEPENDS += \"rust-bin-cross-\${TARGET_ARCH} (= ${TARGET_VERSION}-${NIGHTLY_DATE})\""
+        echo >> "$CARGO_BIN_RECIPE" "DEPENDS += \"rust-bin-cross-\${TARGET_ARCH}-\${PV}-${NIGHTLY_DATE}\""
     else
-        echo >> "$CARGO_BIN_RECIPE" "DEPENDS += \"rust-bin-cross-\${TARGET_ARCH} (= ${TARGET_VERSION})\""
+        echo >> "$CARGO_BIN_RECIPE" "DEPENDS += \"rust-bin-cross-\${TARGET_ARCH}-\${PV}\""
     fi
 
     cat <<EOF >>${CARGO_BIN_RECIPE}
